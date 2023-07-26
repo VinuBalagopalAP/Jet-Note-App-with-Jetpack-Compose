@@ -107,6 +107,7 @@ fun NoteScreen(
                         note = note,
                         onNoteClicked = {
                             onRemoveNote(note)
+                            Toast.makeText(context, "Note Removed", Toast.LENGTH_SHORT).show()
                     })
                 }
             }
@@ -131,7 +132,9 @@ fun NoteRow(
     ) {
         Column(
             modifier = Modifier
-                .clickable { }
+                .clickable {
+                    onNoteClicked(note)
+                }
                 .padding(horizontal = 14.dp, vertical = 6.dp),
             horizontalAlignment = Alignment.Start
         ) {
