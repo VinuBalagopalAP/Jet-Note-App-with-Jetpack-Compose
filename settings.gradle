@@ -10,6 +10,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://finotescore-android.s3.amazonaws.com/release" }
     }
 }
 rootProject.name = "JetNote"

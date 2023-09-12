@@ -8,12 +8,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.jetnote.screen.NoteScreen
 import com.example.jetnote.screen.NoteViewModel
 import com.example.jetnote.ui.theme.JetNoteTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +38,13 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun NotesApp(noteViewModel: NoteViewModel) {
 
-    val noteList = noteViewModel.getAllNote()
+    val noteList = noteViewModel.noteList.collectAsState().value
 
     NoteScreen(
         note = noteList,
-        onAddNote = { noteViewModel.addNote(it) },
-        onRemoveNote = { noteViewModel.removeNote(it) })
+        onRemoveNote = { noteViewModel.deleteNote(it) },
+        onAddNote = { noteViewModel.addNote(it) })
+
 }
 
 @Preview(showBackground = true)

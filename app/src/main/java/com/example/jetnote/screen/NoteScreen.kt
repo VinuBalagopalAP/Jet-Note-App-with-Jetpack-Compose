@@ -145,10 +145,10 @@ fun NoteRow(
 //                            modifier = Modifier.padding(end = 50.dp),
                 text = note.description,
                 style = MaterialTheme.typography.bodySmall)
-            Text(
-                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM" )),
-                style = MaterialTheme.typography.labelMedium
-                )
+//            Text(
+//                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM" )),
+//                style = MaterialTheme.typography.labelMedium
+//                )
         }
     }
 }
