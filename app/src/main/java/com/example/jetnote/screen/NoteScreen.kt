@@ -36,7 +36,6 @@ import com.example.jetnote.components.NoteButton
 import com.example.jetnote.components.NoteInputText
 import com.example.jetnote.data.NotesDataSource
 import com.example.jetnote.model.Note
-import java.time.format.DateTimeFormatter
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -111,7 +110,6 @@ fun NoteScreen(
                     })
                 }
             }
-
         }
     }
 }

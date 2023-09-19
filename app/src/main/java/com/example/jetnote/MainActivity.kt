@@ -44,7 +44,6 @@ fun NotesApp(noteViewModel: NoteViewModel) {
         note = noteList,
         onRemoveNote = { noteViewModel.deleteNote(it) },
         onAddNote = { noteViewModel.addNote(it) })
-
 }
 
 @Preview(showBackground = true)
